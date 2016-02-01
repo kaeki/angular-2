@@ -10,7 +10,7 @@
     * example: scripts/controllers/loginCtrl.js
     
 ### Resources:
-    * [File upload example](https://uncorkedstudios.com/blog/multipartformdata-file-upload-with-angularjs)
+  * [File upload example](https://uncorkedstudios.com/blog/multipartformdata-file-upload-with-angularjs)
 
 ## Build & development
 
