@@ -1,0 +1,7 @@
+<h3>Viestit<h3>
+<ul>
+	<li ng-repeat="message in messages | orderBy:'-'">
+		<h5>{{message.name}}</h5>
+		<p>{{message.message}}</p>
+	</li>
+</ul>

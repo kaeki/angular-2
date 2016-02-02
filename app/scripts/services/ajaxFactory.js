@@ -9,6 +9,15 @@ angular
         ajaxFunctions.login = function (args) {
             return $http.post(urlBase+ '/login', args);
         };
+        ajaxFunctions.register = function (args) {
+        	return $http.post(urlBase+ '/users', args);
+        };
+        ajaxFunctions.message = function (args) {
+        	return $http.post(urlBase+ '/messages', args);
+        };
+        ajaxFunctions.getAllMessages = function () {
+        	return $http.get(urlBase+ '/messages');
+        };
 
         return ajaxFunctions;
   });

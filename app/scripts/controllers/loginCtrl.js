@@ -11,7 +11,9 @@ angular.module('chatApp')
         var request = AjaxFactory.login(data);
         request.then(function(response){
             // tee vastauksella jotain
+            user = response.data;
             console.log(response.data);
+            $scope.logged = true;
         }, function(error){
             // tee virheellä jotain
             console.log(error.data);
