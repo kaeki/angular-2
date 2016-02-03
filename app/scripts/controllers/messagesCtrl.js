@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('chatApp')
-  .controller('messagesCtrl', function ($scope, AjaxFactory) {
+  .controller('messagesCtrl', function ($scope, AjaxFactory, $interval) {
     $scope.getMessages = function(){
-
+        console.log('Dudiin');
         // kutsu login-funktiota AjaxFactorystä
         var request = AjaxFactory.getAllMessages();
         request.then(function(response){
@@ -14,5 +14,7 @@ angular.module('chatApp')
             console.log(error.data);
         });
         };
-      $scope.getMessages();
+      $interval(function(){$scope.getMessages();}, 1000);
+
+
   });

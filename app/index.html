@@ -23,17 +23,25 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    
-    <div ng-controller="LoginCtrl">
-        <login></login>
-        <div ng-controller="registerCtrl">
-            <register></register>
-        </div>
-        <div ng-controller="messageCtrl">
-            <message></message>
-        </div>
-        <div ng-controller="messagesCtrl" ng-if="logged">
-            <messages></messages>
+    <div class="container">
+        <div ng-controller="LoginCtrl" >
+            <div class="col-sm-4" ng-hide="logged">
+                <login></login>
+                <register></register>
+            </div>
+            <div class="row">
+                <div class="col-sm-4" id="profiili" ng-if="logged">
+                    <profile></profile>
+                </div>
+                <div class="col-sm-8 pull-right">
+                    <div ng-controller="messageCtrl" ng-if="logged">
+                        <message></message>
+                    </div>
+                    <div ng-controller="messagesCtrl" ng-if="logged" id="border">
+                        <messages></messages>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -54,13 +62,13 @@
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/loginCtrl.js"></script>
-    <script src="scripts/controllers/registerCtrl.js"></script>
     <script src="scripts/controllers/messageCtrl.js"></script>
     <script src="scripts/controllers/messagesCtrl.js"></script>
     <script src="scripts/directives/login.js"></script>
     <script src="scripts/directives/register.js"></script>
     <script src="scripts/directives/message.js"></script>
     <script src="scripts/directives/messages.js"></script>
+    <script src="scripts/directives/profile.js"></script>    
     <script src="scripts/services/ajaxFactory.js"></script>
     <!-- endbuild -->
 </body>

@@ -11,7 +11,7 @@ angular.module('chatApp')
         var request = AjaxFactory.login(data);
         request.then(function(response){
             // tee vastauksella jotain
-            user = response.data;
+            $scope.user = response.data;
             console.log(response.data);
             $scope.logged = true;
         }, function(error){
@@ -19,4 +19,22 @@ angular.module('chatApp')
             console.log(error.data);
         });
     };
+        $scope.registerToChat = function (){
+            //Data lomakkeesta:
+            var data = {
+                name: $scope.user
+            };  
+            // kutsu register funktiota AjaxFactorysta
+            var request = AjaxFactory.register(data);
+            request.then(function (response){
+                $scope.user = response.data;
+                // 'success:' vähä niiku
+                $scope.logged = true;
+                console.log(response.data);
+            }, function (error){
+                // Virheen sattuessa
+                console.log(error.data);
+            });
+
+        };
   });

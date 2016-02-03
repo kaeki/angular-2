@@ -1,7 +1,13 @@
 <h3>Viestit<h3>
-<ul>
-	<li ng-repeat="message in messages | orderBy:'-'">
-		<h5>{{message.name}}</h5>
-		<p>{{message.message}}</p>
+<ul style="list-style-type:none">
+	<li ng-repeat="message in messages | orderBy:'-'" id="{{message.mID}}" ng-if="children">
+		<div class="media">
+		  <img class="media-object pull-left" ng-src="{{message.thumbnail}}" alt="avatar" onError="this.onerror=null;this.src='images/dunno.jpg';" >
+		  <div class="media-body">
+		    <h4 class="media-heading">{{message.name}}</h4>
+		    <p>{{message.message}}</p>
+		  </div>
+		  <hr>
+		</div>
 	</li>
 </ul>

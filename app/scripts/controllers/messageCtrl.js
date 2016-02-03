@@ -4,7 +4,7 @@ angular.module('chatApp')
 	.controller('messageCtrl', function ($scope, AjaxFactory){
 		$scope.sendMessage =function (){
 			var data = {
-				uID: user.uID,
+				uID: $scope.user.uID,
 				message: $scope.message
 			};
 			var request = AjaxFactory.message(data);

@@ -16,7 +16,7 @@ angular
         	return $http.post(urlBase+ '/messages', args);
         };
         ajaxFunctions.getAllMessages = function () {
-        	return $http.get(urlBase+ '/messages');
+        	return $http.get(urlBase+ '/threads');
         };
 
         return ajaxFunctions;
